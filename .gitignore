@@ -13,4 +13,4 @@ target
 .vscode
 *.sql
 sql
-conf/application.conf
+/conf/application.conf
