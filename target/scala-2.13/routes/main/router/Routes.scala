@@ -17,7 +17,7 @@ class Routes(
   // @LINE:2
   Assets_1: controllers.Assets,
   // @LINE:4
-  UserController_2: com.customy.controllers.AccManager.UserController,
+  RegisterController_2: com.customy.controllers.AccManager.RegisterController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -28,13 +28,13 @@ class Routes(
     // @LINE:2
     Assets_1: controllers.Assets,
     // @LINE:4
-    UserController_2: com.customy.controllers.AccManager.UserController
-  ) = this(errorHandler, HomeController_0, Assets_1, UserController_2, "/")
+    RegisterController_2: com.customy.controllers.AccManager.RegisterController
+  ) = this(errorHandler, HomeController_0, Assets_1, RegisterController_2, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, UserController_2, prefix)
+    new Routes(errorHandler, HomeController_0, Assets_1, RegisterController_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -44,8 +44,8 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """com.customy.controllers.HomeController.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """com.customy.controllers.AccManager.UserController.registerGet"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """com.customy.controllers.AccManager.UserController.registerSubmit"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """com.customy.controllers.AccManager.RegisterController.registerGet"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """com.customy.controllers.AccManager.RegisterController.registerSubmit"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -90,14 +90,14 @@ class Routes(
   )
 
   // @LINE:4
-  private[this] lazy val com_customy_controllers_AccManager_UserController_registerGet2_route = Route("GET",
+  private[this] lazy val com_customy_controllers_AccManager_RegisterController_registerGet2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register")))
   )
-  private[this] lazy val com_customy_controllers_AccManager_UserController_registerGet2_invoker = createInvoker(
-    UserController_2.registerGet,
+  private[this] lazy val com_customy_controllers_AccManager_RegisterController_registerGet2_invoker = createInvoker(
+    RegisterController_2.registerGet,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
-      "com.customy.controllers.AccManager.UserController",
+      "com.customy.controllers.AccManager.RegisterController",
       "registerGet",
       Nil,
       "GET",
@@ -108,14 +108,14 @@ class Routes(
   )
 
   // @LINE:5
-  private[this] lazy val com_customy_controllers_AccManager_UserController_registerSubmit3_route = Route("POST",
+  private[this] lazy val com_customy_controllers_AccManager_RegisterController_registerSubmit3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register")))
   )
-  private[this] lazy val com_customy_controllers_AccManager_UserController_registerSubmit3_invoker = createInvoker(
-    UserController_2.registerSubmit,
+  private[this] lazy val com_customy_controllers_AccManager_RegisterController_registerSubmit3_invoker = createInvoker(
+    RegisterController_2.registerSubmit,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
-      "com.customy.controllers.AccManager.UserController",
+      "com.customy.controllers.AccManager.RegisterController",
       "registerSubmit",
       Nil,
       "POST",
@@ -141,15 +141,15 @@ class Routes(
       }
   
     // @LINE:4
-    case com_customy_controllers_AccManager_UserController_registerGet2_route(params@_) =>
+    case com_customy_controllers_AccManager_RegisterController_registerGet2_route(params@_) =>
       call { 
-        com_customy_controllers_AccManager_UserController_registerGet2_invoker.call(UserController_2.registerGet)
+        com_customy_controllers_AccManager_RegisterController_registerGet2_invoker.call(RegisterController_2.registerGet)
       }
   
     // @LINE:5
-    case com_customy_controllers_AccManager_UserController_registerSubmit3_route(params@_) =>
+    case com_customy_controllers_AccManager_RegisterController_registerSubmit3_route(params@_) =>
       call { 
-        com_customy_controllers_AccManager_UserController_registerSubmit3_invoker.call(UserController_2.registerSubmit)
+        com_customy_controllers_AccManager_RegisterController_registerSubmit3_invoker.call(RegisterController_2.registerSubmit)
       }
   }
 }

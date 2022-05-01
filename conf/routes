@@ -1,5 +1,5 @@
 GET     /                           com.customy.controllers.HomeController.index()
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET     /register                   com.customy.controllers.AccManager.UserController.registerGet
-POST    /register                   com.customy.controllers.AccManager.UserController.registerSubmit
+GET     /register                   com.customy.controllers.AccManager.RegisterController.registerGet
+POST    /register                   com.customy.controllers.AccManager.RegisterController.registerSubmit

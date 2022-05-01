@@ -11,10 +11,10 @@ import com.customy.models.user.{Users, User}
 import com.customy.models.Hash
 
 @Singleton
-class UserController @Inject()(val cc: ControllerComponents) extends AbstractController(cc) with I18nSupport {
-    val registerForm = Form(mapping(
-        "name" -> nonEmptyText,
-        "password" -> nonEmptyText,
+class RegisterController @Inject()(val cc: ControllerComponents) extends AbstractController(cc) with I18nSupport {
+    val registerForm = Form(mapping( //Add validation
+        "name" -> nonEmptyText.verifying(min(1), max(15)),
+        "password" -> nonEmptyText.verifying(min(8)),
         "email" -> nonEmptyText
         )(User.apply)(User.unapply)
     )
