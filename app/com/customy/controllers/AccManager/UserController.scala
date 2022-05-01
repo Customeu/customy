@@ -30,7 +30,7 @@ class UserController @Inject()(val cc: ControllerComponents) extends AbstractCon
                 Users.addUser(User(register.name,
                               Hash.sha256Hash(register.password),
                               register.email))
-                Redirect(routes.UserController.registerGet)
+                Redirect(com.customy.controllers.routes.HomeController.index)
             }
         )
     }
