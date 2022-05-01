@@ -5,7 +5,7 @@ import play.api.data.Form
 import play.api.data.Forms._
 
 
-case class User(name: String, password: String)
+case class User(name: String, password: String, email: String)
 
 object Users {
   def addUser(user: User): Unit = {

@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/piotr/my_git/customy/app/com/customy/views/tests/test_register.scala.html:4:88: value registerSubmit is not a member of com.customy.controllers.AccManager.ReverseUserController[0m
-[0m[[0m[31merror[0m] [0m[0m        @helper.form(action = com.customy.controllers.AccManager.routes.UserController.registerSubmit,[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/piotr/my_git/customy/app/com/customy/controllers/AccManager/UserController.scala:11:8: object Hash is not a member of package com.customy.models[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.customy.models.Hash[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/piotr/my_git/customy/app/com/customy/controllers/AccManager/UserController.scala:31:31: not found: value Hash[0m
+[0m[[0m[31merror[0m] [0m[0m                              Hash.sha256Hash(register.password),[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
