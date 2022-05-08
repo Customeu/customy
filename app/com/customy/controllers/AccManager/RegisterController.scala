@@ -6,6 +6,7 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 import play.api.i18n.I18nSupport
+import play.api.data.validation.Constraints._
 
 import com.customy.models.user.{Users, User}
 import com.customy.models.Hash
@@ -13,8 +14,8 @@ import com.customy.models.Hash
 @Singleton
 class RegisterController @Inject()(val cc: ControllerComponents) extends AbstractController(cc) with I18nSupport {
     val registerForm = Form(mapping( //Add validation
-        "name" -> nonEmptyText.verifying(min(1), max(15)),
-        "password" -> nonEmptyText.verifying(min(8)),
+        "name" -> nonEmptyText(1, 15),
+        "password" -> nonEmptyText(8),
         "email" -> nonEmptyText
         )(User.apply)(User.unapply)
     )

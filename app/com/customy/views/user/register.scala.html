@@ -1,6 +1,7 @@
 @(userForm: Form[com.customy.models.user.User])(implicit request: RequestHeader,messagesProvider: MessagesProvider)
     @import helper._
-    @com.customy.views.html.main("Register") {
+    @com.customy.views.html.main("Register")
+    {
         @helper.form(action = com.customy.controllers.AccManager.routes.RegisterController.registerSubmit,
         Symbol("class")->"form-inline"){
             @helper.CSRF.formField
@@ -19,4 +20,5 @@
                 <input type="submit" class="btn btn-primary" value="Register">
             </div>
         }
+        
     }
