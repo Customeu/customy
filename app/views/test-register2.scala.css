@@ -1,0 +1,77 @@
+body{
+    background-color: #F3F3F3 ;
+     margin: 0;
+     min-height: 100%;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ #title{
+     background: rgb(2,0,36);
+     background: linear-gradient(90deg, rgba(2,0,36,1) 33%, rgba(121,9,70,1) 100%, rgba(0,212,255,1) 100%);
+     font-size: 4em;
+     padding: 0.23em;
+     color: white;
+     padding-left: 3em;
+ }
+ #form2{
+     margin: 80px auto;
+     width: 800px;
+     height: 600px;
+     background-color: white;
+ }
+ #headliner{
+     text-align: center;
+     padding-top: 0.2em;
+     font-size: 2.5em;
+     font-weight: bold;
+ }
+ #login_div{
+     padding-left: 2em;
+     font-size: 1.5em;
+ }
+ #login{
+     width: 700px;
+     height: 40px;
+ }
+ #hasło_div{
+    padding-left: 2em;
+    font-size: 1.5em; 
+ }
+ #hasło_pow{
+     padding-left: 2em;
+     font-size: 1.5em;
+ }
+ #hasło{
+    width: 700px;
+     height: 40px;
+}
+ #hasło_2{
+    width: 700px;
+    height: 40px;
+ }
+ #przycisk2_div{
+    padding-top: 2em;
+    padding-left: 2em;
+    font-size: 1.5em;
+ }
+#kontynuuj2{
+    width: 709px;
+    height: 42px;
+    font-size: 0.8em;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 33%, rgba(121,9,70,1) 100%, rgba(0,212,255,1) 100%);
+    color: white;
+}
+#footer{
+    clear: both;
+    position: relative;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 33%, rgba(121,9,70,1) 100%, rgba(0,212,255,1) 100%);
+    font-size: 1em;
+    color: white;
+}
+ 
+ 
+ 
