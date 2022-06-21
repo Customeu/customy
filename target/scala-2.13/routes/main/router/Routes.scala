@@ -18,6 +18,8 @@ class Routes(
   Assets_1: controllers.Assets,
   // @LINE:4
   RegisterController_2: com.customy.controllers.AccManager.RegisterController,
+  // @LINE:7
+  LoginController_3: com.customy.controllers.AccManager.LoginController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -28,13 +30,15 @@ class Routes(
     // @LINE:2
     Assets_1: controllers.Assets,
     // @LINE:4
-    RegisterController_2: com.customy.controllers.AccManager.RegisterController
-  ) = this(errorHandler, HomeController_0, Assets_1, RegisterController_2, "/")
+    RegisterController_2: com.customy.controllers.AccManager.RegisterController,
+    // @LINE:7
+    LoginController_3: com.customy.controllers.AccManager.LoginController
+  ) = this(errorHandler, HomeController_0, Assets_1, RegisterController_2, LoginController_3, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, RegisterController_2, prefix)
+    new Routes(errorHandler, HomeController_0, Assets_1, RegisterController_2, LoginController_3, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -46,6 +50,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """com.customy.controllers.AccManager.RegisterController.registerGet"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """com.customy.controllers.AccManager.RegisterController.registerSubmit"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """com.customy.controllers.AccManager.LoginController.loginGet"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """com.customy.controllers.AccManager.LoginController.loginSubmit"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -125,6 +131,42 @@ class Routes(
     )
   )
 
+  // @LINE:7
+  private[this] lazy val com_customy_controllers_AccManager_LoginController_loginGet4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
+  )
+  private[this] lazy val com_customy_controllers_AccManager_LoginController_loginGet4_invoker = createInvoker(
+    LoginController_3.loginGet,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "com.customy.controllers.AccManager.LoginController",
+      "loginGet",
+      Nil,
+      "GET",
+      this.prefix + """login""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:8
+  private[this] lazy val com_customy_controllers_AccManager_LoginController_loginSubmit5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
+  )
+  private[this] lazy val com_customy_controllers_AccManager_LoginController_loginSubmit5_invoker = createInvoker(
+    LoginController_3.loginSubmit,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "com.customy.controllers.AccManager.LoginController",
+      "loginSubmit",
+      Nil,
+      "POST",
+      this.prefix + """login""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -150,6 +192,18 @@ class Routes(
     case com_customy_controllers_AccManager_RegisterController_registerSubmit3_route(params@_) =>
       call { 
         com_customy_controllers_AccManager_RegisterController_registerSubmit3_invoker.call(RegisterController_2.registerSubmit)
+      }
+  
+    // @LINE:7
+    case com_customy_controllers_AccManager_LoginController_loginGet4_route(params@_) =>
+      call { 
+        com_customy_controllers_AccManager_LoginController_loginGet4_invoker.call(LoginController_3.loginGet)
+      }
+  
+    // @LINE:8
+    case com_customy_controllers_AccManager_LoginController_loginSubmit5_route(params@_) =>
+      call { 
+        com_customy_controllers_AccManager_LoginController_loginSubmit5_invoker.call(LoginController_3.loginSubmit)
       }
   }
 }
